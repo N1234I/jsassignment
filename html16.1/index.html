@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>User Information Card</title>
+</head>
+<body>
+    <div class="container">
+        <div id="info-card">
+            <h1>User Information Card</h1>
+            <div id="user-info">
+                <div class="field">
+                    <span class="label">First Name: </span>
+                    <span id="first-name"></span>
+                </div>
+                <div class="field">
+                    <span class="label">Last Name:</span>
+                    <span id="last-name"></span>
+                </div>
+                <div class="field">
+                    <span class="label">Country:</span>
+                    <span id="country"></span>
+                </div>
+                <div class="field">
+                    <span class="label">Phone Number:</span>
+                    <span id="phone-number"></span>
+                </div>
+                <div class="field">
+                    <span class="label">State:</span>
+                    <span id="state"></span>
+                </div>
+                <div class="field">
+                    <span class="label">City:</span>
+                    <span id="city"></span>
+                </div>
+                <div class="field">
+                    <span class="label">Village:</span>
+                    <span id="village"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function storeuserinfo(){
+            const Firstname=prompt("Enter First Name");
+            const Lastname=prompt("Enter Last Name");
+            const Country=prompt("Enter Country Name");
+            const Phonenomber=prompt("Enter Phonenombe");
+            const State=prompt("Enter State");
+            const City=prompt("Enter City");
+            const Village=prompt("Enter Village");
+            
+            const userinfo={
+                Firstname,
+                Lastname,
+                Country,
+                Phonenomber,
+                State,
+                City,
+                Village,
+            };
+            localStorage.setItem("userInformation", JSON.stringify(userinfo));
+
+            document.getElementById("first-name").textContent = userinfo.Firstname;
+    document.getElementById("last-name").textContent = userinfo.Lastname;
+    document.getElementById("country").textContent =userinfo. Country;
+    document.getElementById("phone-number").textContent = userinfo. Phonenomber;
+    document.getElementById("state").textContent = userinfo. State;
+    document.getElementById("city").textContent = userinfo.City;
+    document.getElementById("village").textContent = userinfo.Village;
+
+            
+        }
+        storeuserinfo();
+    </script>
+</body>
+</html>
